@@ -1,0 +1,65 @@
+---
+- hosts: IB
+  become: yes
+  tasks:
+    - name: Get squid 4 rpm
+      get_url:
+        url: https://harbottle.gitlab.io/harbottle-main/7/x86_64/harbottle-main-release.rpm
+        dest: /tmp/
+      tags: get-squid-rpm
+      
+      
+    ### Descomente caso tenha uma versão antiga do squid e deseje utilizar a antiga configuração
+    #- name: Copy old squid.conf
+    #  copy:
+    #    src: /etc/squid/squid.conf
+    #    dest: /tmp/squid.conf
+    #    remote_src: yes
+    #  tags: copy-old-conf
+    #
+    #- name: Copy old rule directory
+    #  command: cp -R /etc/squid/rules/ /tmp/
+    #  tags: copy-old-rules
+    #
+    #- name: Remove old squid
+    #  yum:
+    #    name: squid
+    #    state: absent
+    #  tags: remove-old-squid
+    #
+    - name: Install squid rpm
+      yum:
+        name: /tmp/harbottle-main-release.rpm
+        state: present
+      tags: install-rpm
+
+    - name: Install squid4
+      yum:
+        name: squid4
+        state: latest
+      tags: install-squid4
+
+    #- name: Copy the old confy to the new folder
+    #  copy:
+    #    src: /tmp/squid.conf
+    #    dest: /etc/squid4/squid.conf
+    #    remote_src: yes
+    #  tags: new-conf
+
+    #- name: Correction new squid.conf
+    #  replace:
+    #    path: /etc/squid4/squid.conf
+    #    regexp: 'squid'
+    #    replace: 'squid4'
+    #  tags: correction-squid-conf
+    #
+    #- name: Copy rules directory to the new squid folder
+    #  command: cp -R /tmp/rules/ /etc/squid4/
+    #  tags: copy-new-rules
+
+    - name: start squid service
+      service:
+        name: squid4
+        state: started
+        enabled: yes
+...

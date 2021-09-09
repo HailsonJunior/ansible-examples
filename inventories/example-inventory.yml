@@ -1,0 +1,526 @@
+---
+all:
+  children:
+    IB:
+      children:
+        IB-01:
+          hosts:
+            directorysrv01:
+              ansible_host: 172.30.200.98
+            infra-dnssrv01:
+              ansible_host: 172.30.200.100
+            ntpdnssrv01:
+              ansible_host: 172.30.210.2
+            ntpsrv01: 
+              ansible_host: 172.30.210.7
+            openvpnsrv01: 
+              ansible_host: 172.30.210.98
+            postfixinfra01: 
+              ansible_host: 172.30.210.4
+            ossecsrv01: 
+              ansible_host: 172.30.200.66
+            updatesrv01: 
+              ansible_host: 172.30.200.82
+            proxysrv01: 
+              ansible_host: 172.30.210.66
+            infrapci-zabbix-proxy: 
+              ansible_host: 172.30.210.68
+            INFRA-zabbix-proxy-az: 
+              ansible_host: 172.30.210.72
+            jumpbox-adm01: 
+              ansible_host: 172.30.210.178
+            jumpbox-compliance: 
+              ansible_host: 172.30.210.202
+            alertssrv: 
+              ansible_host: 172.30.210.70
+            crypto01: 
+              ansible_host: 172.30.216.5
+            kvm1A: 
+              ansible_host: 172.30.250.34
+            kvm1B: 
+              ansible_host: 172.30.250.35
+            kvm2A: 
+              ansible_host: 172.30.250.36
+            kvm2B: 
+              ansible_host: 172.30.250.37
+        IB-02:
+          hosts:
+            directorysrv02: 
+              ansible_host: 172.30.200.99
+            infra-dnssrv02:
+              ansible_host: 172.30.200.101
+            ntpdnssrv02: 
+              ansible_host: 172.30.210.3
+            ntpsrv02: 
+              ansible_host: 172.30.210.8
+            openvpnsrv02: 
+              ansible_host: 172.30.210.99
+            postfixinfra02: 
+              ansible_host: 172.30.210.5
+            proxysrv02: 
+              ansible_host: 172.30.210.67
+            jumpbox-adm02: 
+              ansible_host: 172.30.210.179
+            crypto02:
+              ansible_host: 172.30.216.6
+    TK:
+      children:
+        TK-IB:
+          children:
+            TK-IB-01:
+              hosts:
+                TK-jumpbox-db01: 
+                  ansible_port: 21286 
+                  ansible_host: 172.30.250.194
+                TK-jumpbox-Operations01: 
+                  ansible_port: 21294 
+                  ansible_host: 172.30.250.194
+                TK-directorysrv01: 
+                  ansible_port: 21098 
+                  ansible_host: 172.30.250.194
+                TK-logstash-01: 
+                  ansible_port: 21146 
+                  ansible_host: 172.30.250.194
+                TK-openvpnsrv01: 
+                  ansible_port: 21298 
+                  ansible_host: 172.30.250.194
+                TK-ossecsrv01: 
+                  ansible_port: 21066 
+                  ansible_host: 172.30.250.194
+                TK-postfixinfra-01: 
+                  ansible_port: 21204 
+                  ansible_host: 172.30.250.194
+                TK-proxysrv01: 
+                  ansible_port: 21266 
+                  ansible_host: 172.30.250.194
+                TK-zabbix-proxy-01: 
+                  ansible_port: 21268 
+                  ansible_host: 172.30.250.194
+                TK-alertsrv: 
+                  ansible_port: 21270
+                  ansible_host: 172.30.250.194
+                TK-zabbix-proxy-az: 
+                  ansible_port: 21272 
+                  ansible_host: 172.30.250.194
+                TK-jumpbox-Compliance: 
+                  ansible_port: 21202 
+                  ansible_host: 172.30.250.194
+                TK-DNSSRV01: 
+                  ansible_port: 21100 
+                  ansible_host: 172.30.250.194
+            TK-IB-02:
+              hosts:
+                TK-jumpbox-db02:
+                  ansible_port: 21287 
+                  ansible_host: 172.30.250.194
+                TK-jumpbox-operations02: 
+                  ansible_port: 21295 
+                  ansible_host: 172.30.250.194
+                TK-directorysrv02: 
+                  ansible_port: 21099 
+                  ansible_host: 172.30.250.194
+                TK-openvpnsrv02: 
+                  ansible_port: 21299 
+                  ansible_host: 172.30.250.194
+                TK-postfixinfra-02: 
+                  ansible_port: 21205 
+                  ansible_host: 172.30.250.194
+                TK-proxysrv02: 
+                  ansible_port: 21267 
+                  ansible_host: 172.30.250.194
+                TK-DNSSRV02: 
+                  ansible_port: 21101 
+                  ansible_host: 172.30.250.194
+        TK-APP:
+          children:
+            TK-APP-01:
+              hosts:
+                TK-admin-01: 
+                  ansible_port: 2166 
+                  ansible_host: 172.30.250.194
+                TK-apache-01: 
+                  ansible_port: 21114 
+                  ansible_host: 172.30.250.194
+                TK-batch-01: 
+                  ansible_port: 2102 
+                  ansible_host: 172.30.250.194
+                TK-cs-mdes-01: 
+                  ansible_port: 2182 
+                  ansible_host: 172.30.250.194
+                TK-db-01: 
+                  ansible_port: 21130 
+                  ansible_host: 172.30.250.194
+                TK-et-01: 
+                  ansible_port: 2118 
+                  ansible_host: 172.30.250.194
+                TK-et-03:
+                  ansible_port: 2120 
+                  ansible_host: 172.30.250.194
+                TK-is-01: 
+                  ansible_port: 2198 
+                  ansible_host: 172.30.250.194
+                TK-nosql-01: 
+                  ansible_port: 21162 
+                  ansible_host: 172.30.250.194
+                TK-nosql-03: 
+                  ansible_port: 21164 
+                  ansible_host: 172.30.250.194
+                TK-vn-01: 
+                  ansible_port: 2150 
+                  ansible_host: 172.30.250.194
+                p-tk-apache-ms-01: 
+                  ansible_port: 21117 
+                  ansible_host: 172.30.250.194
+                p-tk-adm-ms-01: 
+                  ansible_port: 2168 
+                  ansible_host: 172.30.250.194
+                p-tk-plvault:
+                  ansible_port: 21010 
+                  ansible_host: 172.30.250.194
+            TK-APP-02:
+              hosts:
+                TK-admin-02: 
+                  ansible_port: 2167 
+                  ansible_host: 172.30.250.194
+                TK-apache-02: 
+                  ansible_port: 21115 
+                  ansible_host: 172.30.250.194
+                TK-batch-02: 
+                  ansible_port: 2103 
+                  ansible_host: 172.30.250.194
+                TK-cs-mdes-02: 
+                  ansible_port: 2183 
+                  ansible_host: 172.30.250.194
+                TK-db-02: 
+                  ansible_port: 21131 
+                  ansible_host: 172.30.250.194
+                TK-et-02: 
+                  ansible_port: 2119 
+                  ansible_host: 172.30.250.194
+                TK-et-04: 
+                  ansible_port: 2121 
+                  ansible_host: 172.30.250.194
+                TK-is-02: 
+                  ansible_port: 2199 
+                  ansible_host: 172.30.250.194
+                TK-nosql-02: 
+                  ansible_port: 21163 
+                  ansible_host: 172.30.250.194
+                TK-nosql-04: 
+                  ansible_port: 21165 
+                  ansible_host: 172.30.250.194
+                TK-vn-02: 
+                  ansible_port: 2151 
+                  ansible_host: 172.30.250.194
+                p-tk-apache-ms-02: 
+                  ansible_port: 21118 
+                  ansible_host: 172.30.250.194
+                p-tk-adm-ms-02: 
+                  ansible_port: 2169 
+                  ansible_host: 172.30.250.194
+    ACS:
+      children:
+        ACS-IB:
+          children:
+            ACS-IB-01:
+              hosts:
+                ACS-jumpbox-db01: 
+                  ansible_port: 24086 
+                  ansible_host: 172.17.250.2
+                ACS-jumpbox-Operations01: 
+                  ansible_port: 24094 
+                  ansible_host: 172.17.250.2
+                ACS-directorysrv01: 
+                  ansible_port: 24098 
+                  ansible_host: 172.17.250.2
+                ACS-logstash-01: 
+                  ansible_port: 24046 
+                  ansible_host: 172.17.250.2
+                ACS-openvpnsrv01: 
+                  ansible_port: 24298 
+                  ansible_host: 172.17.250.2
+                ACS-ossecsrv01: 
+                  ansible_port: 24066 
+                  ansible_host: 172.17.250.2
+                ACS-postfixinfra-01: 
+                  ansible_port: 24004 
+                  ansible_host: 172.17.250.2
+                ACS-proxysrv01: 
+                  ansible_port: 24266 
+                  ansible_host: 172.17.250.2
+                ACS-zabbix-proxy-01: 
+                  ansible_port: 24268 
+                  ansible_host: 172.17.250.2
+                ACS-zabbix-proxy-az: 
+                  ansible_port: 24272 
+                  ansible_host: 172.17.250.2
+                ACS-jumpbox-compliance01: 
+                  ansible_port: 24202 
+                  ansible_host: 172.17.250.2
+                acs-alertssrv: 
+                  ansible_port: 24270 
+                  ansible_host: 172.17.250.2
+                ACS-dnssrv-01: 
+                  ansible_port: 24100 
+                  ansible_host: 172.17.250.2
+            ACS-IB-02:
+              hosts:
+                ACS-jumpbox-db02:
+                  ansible_port: 24087 
+                  ansible_host: 172.17.250.2
+                ACS-jumpbox-Operations02: 
+                  ansible_port: 24095 
+                  ansible_host: 172.17.250.2
+                ACS-directorysrv02:
+                  ansible_port: 24099 
+                  ansible_host: 172.17.250.2
+                ACS-openvpnsrv02:
+                  ansible_port: 24299 
+                  ansible_host: 172.17.250.2
+                ACS-postfixinfra-02: 
+                  ansible_port: 24005 
+                  ansible_host: 172.17.250.2
+                ACS-proxysrv02: 
+                  ansible_port: 24267 
+                  ansible_host: 172.17.250.2
+                ACS-dnssrv-02: 
+                  ansible_port: 24101 
+                  ansible_host: 172.17.250.2
+        ACS-APP:
+          children:
+            ACS-APP-01:
+              hosts:
+                ACS-ACS-01:
+                  ansible_port: 2402 
+                  ansible_host: 172.17.250.2
+                ACS-ADMIN-01:
+                 ansible_port: 2418 
+                 ansible_host: 172.17.250.2
+                ACS-APACHE-01:
+                  ansible_port: 2466 
+                  ansible_host: 172.17.250.2
+                ACS-AUTHSYSTEM-01:
+                  ansible_port: 2482
+                  ansible_host: 172.17.250.2
+                ACS-DB-01:
+                  ansible_port: 2450 
+                  ansible_host: 172.17.250.2
+            ACS-APP-02:
+              hosts:
+                ACS-ACS-02:
+                 ansible_port: 2403 
+                 ansible_host: 172.17.250.2
+                ACS-ADMIN-02:
+                 ansible_port: 2419 
+                 ansible_host: 172.17.250.2
+                ACS-APACHE-02:
+                  ansible_port: 2467 
+                  ansible_host: 172.17.250.2
+                ACS-AUTHSYSTEM-02:
+                  ansible_port: 2483 
+                  ansible_host: 172.17.250.2
+                ACS-DB-02: 
+                  ansible_port: 2451 
+                  ansible_host: 172.17.250.2
+    ATM:
+      children:
+        ATM-IB:
+          children:
+            ATM-IB-01:
+              hosts:
+                ATM-jumpbox-db01:
+                  ansible_port: 20086 
+                  ansible_host: 172.30.250.226
+                ATM-jumpbox-Operations01:
+                  ansible_port: 20094 
+                  ansible_host: 172.30.250.226
+                ATM-directorysrv01:
+                  ansible_port: 20098 
+                  ansible_host: 172.30.250.226
+                ATM-openvpnsrv01:
+                  ansible_port: 20298 
+                  ansible_host: 172.30.250.226
+                ATM-ossecsrv01:
+                  ansible_port: 20066 
+                  ansible_host: 172.30.250.226
+                ATM-postfixinfra-01:
+                  ansible_port: 20004 
+                  ansible_host: 172.30.250.226
+                ATM-proxysrv01:
+                  ansible_port: 20266 
+                  ansible_host: 172.30.250.226
+                ATM-zabbix-proxy-01:
+                  ansible_port: 20268 
+                  ansible_host: 172.30.250.226
+                ATM-zabbix-proxy-az:
+                  ansible_port: 20272 
+                  ansible_host: 172.30.250.226
+                ATM-jumpbox-Compliance:
+                  ansible_port: 20202 
+                  ansible_host: 172.30.250.226
+                ATM-alertssrv:
+                  ansible_port: 20270 
+                  ansible_host: 172.30.250.226
+                ATM-dnssrv01:
+                  ansible_port: 20100 
+                  ansible_host: 172.30.250.226
+                ATM-logstash:
+                 ansible_port: 20046 
+                 ansible_host: 172.30.250.226
+            ATM-IB-02:
+              hosts:
+                ATM-jumpbox-db02:
+                  ansible_port: 20087 
+                  ansible_host: 172.30.250.226
+                ATM-jumpbox-Operations02:
+                  ansible_port: 20095 
+                  ansible_host: 172.30.250.226
+                ATM-directorysrv02:
+                  ansible_port: 20099 
+                  ansible_host: 172.30.250.226
+                ATM-openvpnsrv02:
+                  ansible_port: 20299 
+                  ansible_host: 172.30.250.226
+                ATM-proxysrv02:
+                  ansible_port: 20267 
+                  ansible_host: 172.30.250.226
+                ATM-dnssrv02:
+                  ansible_port: 20101 
+                  ansible_host: 172.30.250.226
+        ATM-APP:
+          children:
+            ATM-APP-01:
+              hosts:
+                ATM-PROCSRV01:
+                  ansible_port: 2034
+                  ansible_host: 172.30.250.226
+                ATM-TRANSSRV01:
+                  ansible_port: 2050 
+                  ansible_host: 172.30.250.226
+                ATM-WEBSRV01:
+                  ansible_port: 2066 
+                  ansible_host: 172.30.250.226
+                ATM-POSTGRESRV01:
+                  ansible_port: 2098 
+                  ansible_host: 172.30.250.226
+                ATM-apache01:
+                  ansible_port: 2082 
+                  ansible_host: 172.30.250.226
+            ATM-APP-02:
+              hosts:
+                ATM-PROCSRV02:
+                  ansible_port: 2035 
+                  ansible_host: 172.30.250.226
+                ATM-TRANSSRV02:
+                  ansible_port: 2051 
+                  ansible_host: 172.30.250.226
+                ATM-WEBSRV02:
+                  ansible_port: 2067 
+                  ansible_host: 172.30.250.226
+                ATM-POSTGRESRV02:
+                  ansible_port: 2099 
+                  ansible_host: 172.30.250.226
+                ATM-apache02:
+                  ansible_port: 2083 
+                  ansible_host: 172.30.250.226
+    CONSU:
+      children:
+        CONSU-IB:
+          children:
+            CONSU-IB-01:
+              hosts:
+                CONSU-DIRECTORYSRV01:
+                  ansible_port: 22098 
+                  ansible_host: 172.30.250.222
+                CONSU-DNSSRV01:
+                  ansible_port: 22100 
+                  ansible_host: 172.30.250.222
+                CONSU-OPENVPNSRV01:
+                  ansible_port: 22298 
+                  ansible_host: 172.30.250.222
+                CONSU-PROXYSRV01: 
+                  ansible_port: 22266 
+                  ansible_host: 172.30.250.222
+                CONSU-ZABBIX-PROXY:
+                  ansible_port: 22268 
+                  ansible_host: 172.30.250.222
+                CONSU-ZABBIX-PROXY-AZ:
+                  ansible_port: 22272 
+                  ansible_host: 172.30.250.222
+                CONSU-POSTFIXINFRA:
+                  ansible_port: 22004 
+                  ansible_host: 172.30.250.222
+                CONSU-OSSECSRV01:
+                  ansible_port: 22066 
+                  ansible_host: 172.30.250.222
+                CONSU-JUMPBOX-ADM01:
+                  ansible_port: 24078 
+                  ansible_host: 172.30.250.222
+                CONSU-JUMPBOX-OPT01:
+                  ansible_port: 22094 
+                  ansible_host: 172.30.250.222
+                CONSU-JUMPBOX-DB01:
+                  ansible_port: 22086 
+                  ansible_host: 172.30.250.222
+                CONSU-JUMPBOX-COMPLIANCE:
+                  ansible_port: 22202 
+                  ansible_host: 172.30.250.222
+            CONSU-IB-02:
+              hosts:
+                CONSU-DIRECTORYSRV02:
+                  ansible_port: 22099
+                  ansible_host: 172.30.250.222
+                CONSU-DNSSRV02:
+                  ansible_port: 22101 
+                  ansible_host: 172.30.250.222
+                CONSU-OPENVPNSRV02:
+                  ansible_port: 22299 
+                  ansible_host: 172.30.250.222
+                CONSU-PROXYSRV02:
+                  ansible_port: 22267 
+                  ansible_host: 172.30.250.222
+                CONSU-JUMPBOX-ADM02:
+                  ansible_port: 24079 
+                  ansible_host: 172.30.250.222
+                CONSU-JUMPBOX-OPT02:
+                  ansible_port: 22095 
+                  ansible_host: 172.30.250.222
+                CONSU-JUMPBOX-DB02:
+                  ansible_port: 22087 
+                  ansible_host: 172.30.250.222
+        CONSU-APP:
+          children:
+            CONSU-APP-01:
+              hosts:
+                CONSU-DOCKER01:
+                  ansible_port: 2218
+                  ansible_host: 172.30.250.222
+                CONSU-KONG01:
+                  ansible_port: 2202 
+                  ansible_host: 172.30.250.222
+                CONSU-DB01:
+                  ansible_port: 2234 
+                  ansible_host: 172.30.250.222
+                CONSU-JUMPBOX-DB01:
+                  ansible_port: 22094 
+                  ansible_host: 172.30.250.222
+                CONSU-HARBOR01:
+                  ansible_port: 2250 
+                  ansible_host: 172.30.250.222
+            CONSU-APP-02:
+              hosts:
+                CONSU-DOCKER02:
+                  ansible_port: 2219
+                  ansible_host: 172.30.250.222
+                CONSU-KONG02:
+                  ansible_port: 2203 
+                  ansible_host: 172.30.250.222
+                CONSU-DB02:
+                  ansible_port: 2235 
+                  ansible_host: 172.30.250.222
+                CONSU-JUMPBOX-DB02: 
+                  ansible_port: 22095 
+                  ansible_host: 172.30.250.222
+                CONSU-HARBOR02:
+                  ansible_port: 2251 
+                  ansible_host: 172.30.250.222
