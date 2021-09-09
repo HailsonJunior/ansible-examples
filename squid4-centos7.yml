@@ -9,7 +9,7 @@
       tags: get-squid-rpm
       
       
-    ### Descomente caso tenha uma versão antiga do squid e deseje utilizar a antiga configuração
+    ### Descomente o que estiver comentado caso tenha uma versão antiga do squid e deseje utilizar a antiga configuração
     #- name: Copy old squid.conf
     #  copy:
     #    src: /etc/squid/squid.conf
