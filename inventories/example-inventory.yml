@@ -6,63 +6,63 @@ all:
         IB-01:
           hosts:
             directorysrv01:
-              ansible_host: 172.30.200.98
+              ansible_host: 192.168.1.1
             infra-dnssrv01:
-              ansible_host: 172.30.200.100
+              ansible_host: 192.168.1.1
             ntpdnssrv01:
-              ansible_host: 172.30.210.2
+              ansible_host: 192.168.1.1
             ntpsrv01: 
-              ansible_host: 172.30.210.7
+              ansible_host: 192.168.1.1
             openvpnsrv01: 
-              ansible_host: 172.30.210.98
+              ansible_host: 192.168.1.1
             postfixinfra01: 
-              ansible_host: 172.30.210.4
+              ansible_host: 192.168.1.1
             ossecsrv01: 
-              ansible_host: 172.30.200.66
+              ansible_host: 192.168.1.1
             updatesrv01: 
-              ansible_host: 172.30.200.82
+              ansible_host: 192.168.1.1
             proxysrv01: 
-              ansible_host: 172.30.210.66
+              ansible_host: 192.168.1.1
             infrapci-zabbix-proxy: 
-              ansible_host: 172.30.210.68
+              ansible_host: 192.168.1.1
             INFRA-zabbix-proxy-az: 
-              ansible_host: 172.30.210.72
+              ansible_host: 192.168.1.1
             jumpbox-adm01: 
-              ansible_host: 172.30.210.178
+              ansible_host: 192.168.1.1
             jumpbox-compliance: 
-              ansible_host: 172.30.210.202
+              ansible_host: 192.168.1.1
             alertssrv: 
-              ansible_host: 172.30.210.70
+              ansible_host: 192.168.1.1
             crypto01: 
-              ansible_host: 172.30.216.5
+              ansible_host: 192.168.1.1
             kvm1A: 
-              ansible_host: 172.30.250.34
+              ansible_host: 192.168.1.1
             kvm1B: 
-              ansible_host: 172.30.250.35
+              ansible_host: 192.168.1.1
             kvm2A: 
-              ansible_host: 172.30.250.36
+              ansible_host: 192.168.1.1
             kvm2B: 
-              ansible_host: 172.30.250.37
+              ansible_host: 192.168.1.1
         IB-02:
           hosts:
             directorysrv02: 
-              ansible_host: 172.30.200.99
+              ansible_host: 192.168.1.1
             infra-dnssrv02:
-              ansible_host: 172.30.200.101
+              ansible_host: 192.168.1.1
             ntpdnssrv02: 
-              ansible_host: 172.30.210.3
+              ansible_host: 192.168.1.1
             ntpsrv02: 
-              ansible_host: 172.30.210.8
+              ansible_host: 192.168.1.1
             openvpnsrv02: 
-              ansible_host: 172.30.210.99
+              ansible_host: 192.168.1.1
             postfixinfra02: 
-              ansible_host: 172.30.210.5
+              ansible_host: 192.168.1.1
             proxysrv02: 
-              ansible_host: 172.30.210.67
+              ansible_host: 192.168.1.1
             jumpbox-adm02: 
-              ansible_host: 172.30.210.179
+              ansible_host: 192.168.1.1
             crypto02:
-              ansible_host: 172.30.216.6
+              ansible_host: 192.168.1.1
     TK:
       children:
         TK-IB:
