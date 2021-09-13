@@ -1,0 +1,8 @@
+---
+- name: Configura Selinux antivirus can scan
+  shell: setsebool -P antivirus_can_scan_system 1
+  tags: selinux
+
+- name: Configure Selinux clamd use
+  shell: setsebool -P clamd_use_jit 0
+  tags: selinux

@@ -1,0 +1,9 @@
+set realname=""
+
+
+## name remetente
+## email do remetente
+set from=hostname
+
+## smtp server
+set smtp_url="smtp://h-postfixinfra01.environment.int:25"

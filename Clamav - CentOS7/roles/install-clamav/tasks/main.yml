@@ -1,0 +1,6 @@
+--- 
+# tasks file for instalacao-proxmox
+- include: install.yml
+- include: selinux.yml
+- include: conf-files.yml
+- include: services.yml

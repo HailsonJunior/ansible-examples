@@ -1,0 +1,12 @@
+---
+- name: Change timezone to UTC
+  hosts: 'host_group'
+  become: true
+  become_method: sudo
+  tasks:
+    - name: 'Change timezone to UTC'
+      timezone:
+        name: UTC
+        
+...
+

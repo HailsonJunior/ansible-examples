@@ -1,0 +1,6 @@
+---
+- name: Configura Clamav
+  lineinfile:
+    path: /etc/crontab
+    line: '04 00 * * * root /root/scripts/clamscan_daily.sh'
+  tags: configura-crontab
