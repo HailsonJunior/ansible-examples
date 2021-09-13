@@ -17,31 +17,15 @@ all:
               ansible_host: 192.168.1.1
             postfixinfra01: 
               ansible_host: 192.168.1.1
-            ossecsrv01: 
-              ansible_host: 192.168.1.1
             updatesrv01: 
               ansible_host: 192.168.1.1
             proxysrv01: 
-              ansible_host: 192.168.1.1
-            infrapci-zabbix-proxy: 
               ansible_host: 192.168.1.1
             INFRA-zabbix-proxy-az: 
               ansible_host: 192.168.1.1
             jumpbox-adm01: 
               ansible_host: 192.168.1.1
             jumpbox-compliance: 
-              ansible_host: 192.168.1.1
-            alertssrv: 
-              ansible_host: 192.168.1.1
-            crypto01: 
-              ansible_host: 192.168.1.1
-            kvm1A: 
-              ansible_host: 192.168.1.1
-            kvm1B: 
-              ansible_host: 192.168.1.1
-            kvm2A: 
-              ansible_host: 192.168.1.1
-            kvm2B: 
               ansible_host: 192.168.1.1
         IB-02:
           hosts:
@@ -60,8 +44,6 @@ all:
             proxysrv02: 
               ansible_host: 192.168.1.1
             jumpbox-adm02: 
-              ansible_host: 192.168.1.1
-            crypto02:
               ansible_host: 192.168.1.1
     TK:
       children:
@@ -89,24 +71,6 @@ all:
                   ansible_host: 192.168.1.1
                 TK-postfixinfra-01: 
                   ansible_port: 21204 
-                  ansible_host: 192.168.1.1
-                TK-proxysrv01: 
-                  ansible_port: 21266 
-                  ansible_host: 192.168.1.1
-                TK-zabbix-proxy-01: 
-                  ansible_port: 21268 
-                  ansible_host: 192.168.1.1
-                TK-alertsrv: 
-                  ansible_port: 21270
-                  ansible_host: 192.168.1.1
-                TK-zabbix-proxy-az: 
-                  ansible_port: 21272 
-                  ansible_host: 192.168.1.1
-                TK-jumpbox-Compliance: 
-                  ansible_port: 21202 
-                  ansible_host: 192.168.1.1
-                TK-DNSSRV01: 
-                  ansible_port: 21100 
                   ansible_host: 192.168.1.1
             TK-IB-02:
               hosts:
@@ -153,30 +117,6 @@ all:
                 TK-et-01: 
                   ansible_port: 2118 
                   ansible_host: 192.168.1.1
-                TK-et-03:
-                  ansible_port: 2120 
-                  ansible_host: 192.168.1.1
-                TK-is-01: 
-                  ansible_port: 2198 
-                  ansible_host: 192.168.1.1
-                TK-nosql-01: 
-                  ansible_port: 21162 
-                  ansible_host: 192.168.1.1
-                TK-nosql-03: 
-                  ansible_port: 21164 
-                  ansible_host: 192.168.1.1
-                TK-vn-01: 
-                  ansible_port: 2150 
-                  ansible_host: 192.168.1.1
-                p-tk-apache-ms-01: 
-                  ansible_port: 21117 
-                  ansible_host: 192.168.1.1
-                p-tk-adm-ms-01: 
-                  ansible_port: 2168 
-                  ansible_host: 192.168.1.1
-                p-tk-plvault:
-                  ansible_port: 21010 
-                  ansible_host: 192.168.1.1
             TK-APP-02:
               hosts:
                 TK-admin-02: 
@@ -199,24 +139,6 @@ all:
                   ansible_host: 192.168.1.1
                 TK-et-04: 
                   ansible_port: 2121 
-                  ansible_host: 192.168.1.1
-                TK-is-02: 
-                  ansible_port: 2199 
-                  ansible_host: 192.168.1.1
-                TK-nosql-02: 
-                  ansible_port: 21163 
-                  ansible_host: 192.168.1.1
-                TK-nosql-04: 
-                  ansible_port: 21165 
-                  ansible_host: 192.168.1.1
-                TK-vn-02: 
-                  ansible_port: 2151 
-                  ansible_host: 192.168.1.1
-                p-tk-apache-ms-02: 
-                  ansible_port: 21118 
-                  ansible_host: 192.168.1.1
-                p-tk-adm-ms-02: 
-                  ansible_port: 2169 
                   ansible_host: 192.168.1.1
     ACS:
       children:
@@ -241,27 +163,6 @@ all:
                   ansible_host: 192.168.1.1
                 ACS-ossecsrv01: 
                   ansible_port: 24066 
-                  ansible_host: 192.168.1.1
-                ACS-postfixinfra-01: 
-                  ansible_port: 24004 
-                  ansible_host: 192.168.1.1
-                ACS-proxysrv01: 
-                  ansible_port: 24266 
-                  ansible_host: 192.168.1.1
-                ACS-zabbix-proxy-01: 
-                  ansible_port: 24268 
-                  ansible_host: 192.168.1.1
-                ACS-zabbix-proxy-az: 
-                  ansible_port: 24272 
-                  ansible_host: 192.168.1.1
-                ACS-jumpbox-compliance01: 
-                  ansible_port: 24202 
-                  ansible_host: 192.168.1.1
-                acs-alertssrv: 
-                  ansible_port: 24270 
-                  ansible_host: 192.168.1.1
-                ACS-dnssrv-01: 
-                  ansible_port: 24100 
                   ansible_host: 192.168.1.1
             ACS-IB-02:
               hosts:
@@ -349,24 +250,6 @@ all:
                 ATM-proxysrv01:
                   ansible_port: 20266 
                   ansible_host: 192.168.1.1
-                ATM-zabbix-proxy-01:
-                  ansible_port: 20268 
-                  ansible_host: 192.168.1.1
-                ATM-zabbix-proxy-az:
-                  ansible_port: 20272 
-                  ansible_host: 192.168.1.1
-                ATM-jumpbox-Compliance:
-                  ansible_port: 20202 
-                  ansible_host: 192.168.1.1
-                ATM-alertssrv:
-                  ansible_port: 20270 
-                  ansible_host: 192.168.1.1
-                ATM-dnssrv01:
-                  ansible_port: 20100 
-                  ansible_host: 192.168.1.1
-                ATM-logstash:
-                 ansible_port: 20046 
-                 ansible_host: 192.168.1.1
             ATM-IB-02:
               hosts:
                 ATM-jumpbox-db02:
@@ -386,141 +269,4 @@ all:
                   ansible_host: 192.168.1.1
                 ATM-dnssrv02:
                   ansible_port: 20101 
-                  ansible_host: 192.168.1.1
-        ATM-APP:
-          children:
-            ATM-APP-01:
-              hosts:
-                ATM-PROCSRV01:
-                  ansible_port: 2034
-                  ansible_host: 192.168.1.1
-                ATM-TRANSSRV01:
-                  ansible_port: 2050 
-                  ansible_host: 192.168.1.1
-                ATM-WEBSRV01:
-                  ansible_port: 2066 
-                  ansible_host: 192.168.1.1
-                ATM-POSTGRESRV01:
-                  ansible_port: 2098 
-                  ansible_host: 192.168.1.1
-                ATM-apache01:
-                  ansible_port: 2082 
-                  ansible_host: 192.168.1.1
-            ATM-APP-02:
-              hosts:
-                ATM-PROCSRV02:
-                  ansible_port: 2035 
-                  ansible_host: 192.168.1.1
-                ATM-TRANSSRV02:
-                  ansible_port: 2051 
-                  ansible_host: 192.168.1.1
-                ATM-WEBSRV02:
-                  ansible_port: 2067 
-                  ansible_host: 192.168.1.1
-                ATM-POSTGRESRV02:
-                  ansible_port: 2099 
-                  ansible_host: 192.168.1.1
-                ATM-apache02:
-                  ansible_port: 2083 
-                  ansible_host: 192.168.1.1
-    CONSU:
-      children:
-        CONSU-IB:
-          children:
-            CONSU-IB-01:
-              hosts:
-                CONSU-DIRECTORYSRV01:
-                  ansible_port: 22098 
-                  ansible_host: 192.168.1.1
-                CONSU-DNSSRV01:
-                  ansible_port: 22100 
-                  ansible_host: 192.168.1.1
-                CONSU-OPENVPNSRV01:
-                  ansible_port: 22298 
-                  ansible_host: 192.168.1.1
-                CONSU-PROXYSRV01: 
-                  ansible_port: 22266 
-                  ansible_host: 192.168.1.1
-                CONSU-ZABBIX-PROXY:
-                  ansible_port: 22268 
-                  ansible_host: 192.168.1.1
-                CONSU-ZABBIX-PROXY-AZ:
-                  ansible_port: 22272 
-                  ansible_host: 192.168.1.1
-                CONSU-POSTFIXINFRA:
-                  ansible_port: 22004 
-                  ansible_host: 192.168.1.1
-                CONSU-OSSECSRV01:
-                  ansible_port: 22066 
-                  ansible_host: 192.168.1.1
-                CONSU-JUMPBOX-ADM01:
-                  ansible_port: 24078 
-                  ansible_host: 192.168.1.1
-                CONSU-JUMPBOX-OPT01:
-                  ansible_port: 22094 
-                  ansible_host: 192.168.1.1
-                CONSU-JUMPBOX-DB01:
-                  ansible_port: 22086 
-                  ansible_host: 192.168.1.1
-                CONSU-JUMPBOX-COMPLIANCE:
-                  ansible_port: 22202 
-                  ansible_host: 192.168.1.1
-            CONSU-IB-02:
-              hosts:
-                CONSU-DIRECTORYSRV02:
-                  ansible_port: 22099
-                  ansible_host: 192.168.1.1
-                CONSU-DNSSRV02:
-                  ansible_port: 22101 
-                  ansible_host: 192.168.1.1
-                CONSU-OPENVPNSRV02:
-                  ansible_port: 22299 
-                  ansible_host: 192.168.1.1
-                CONSU-PROXYSRV02:
-                  ansible_port: 22267 
-                  ansible_host: 192.168.1.1
-                CONSU-JUMPBOX-ADM02:
-                  ansible_port: 24079 
-                  ansible_host: 192.168.1.1
-                CONSU-JUMPBOX-OPT02:
-                  ansible_port: 22095 
-                  ansible_host: 192.168.1.1
-                CONSU-JUMPBOX-DB02:
-                  ansible_port: 22087 
-                  ansible_host: 192.168.1.1
-        CONSU-APP:
-          children:
-            CONSU-APP-01:
-              hosts:
-                CONSU-DOCKER01:
-                  ansible_port: 2218
-                  ansible_host: 192.168.1.1
-                CONSU-KONG01:
-                  ansible_port: 2202 
-                  ansible_host: 192.168.1.1
-                CONSU-DB01:
-                  ansible_port: 2234 
-                  ansible_host: 192.168.1.1
-                CONSU-JUMPBOX-DB01:
-                  ansible_port: 22094 
-                  ansible_host: 192.168.1.1
-                CONSU-HARBOR01:
-                  ansible_port: 2250 
-                  ansible_host: 192.168.1.1
-            CONSU-APP-02:
-              hosts:
-                CONSU-DOCKER02:
-                  ansible_port: 2219
-                  ansible_host: 192.168.1.1
-                CONSU-KONG02:
-                  ansible_port: 2203 
-                  ansible_host: 192.168.1.1
-                CONSU-DB02:
-                  ansible_port: 2235 
-                  ansible_host: 192.168.1.1
-                CONSU-JUMPBOX-DB02: 
-                  ansible_port: 22095 
-                  ansible_host: 192.168.1.1
-                CONSU-HARBOR02:
-                  ansible_port: 2251 
                   ansible_host: 192.168.1.1
