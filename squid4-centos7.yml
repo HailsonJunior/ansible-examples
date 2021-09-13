@@ -1,6 +1,8 @@
 ---
-- hosts: IB
+- name: Install squid 4 - CentOS 7
+  hosts: IB
   become: yes
+  become_method: sudo
   tasks:
     - name: Get squid 4 rpm
       get_url:
