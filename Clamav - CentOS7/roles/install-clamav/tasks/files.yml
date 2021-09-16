@@ -57,21 +57,7 @@
   replace:
     path: /root/.muttrc
     regexp: 'hostname'
-    replace: '"h-{{ ansible_hostname }}@environment.int"'
+    replace: '"{{ ansible_hostname }}@environment.int"'
   tags: change-muttrc-remetente
-
-- name: Ajuste remetente muttrc
-  replace:
-    path: /root/.muttrc
-    regexp: 'h-H'
-    replace: 'h'
-  tags: change-muttrc-remetente
-
-- name: Ajuste remetente muttrc
-  replace:
-    path: /root/.muttrc
-    regexp: 'h-h'
-    replace: 'h'
-  tags: change-muttrc-remetente
-
+  
 ...
