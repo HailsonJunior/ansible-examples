@@ -1,7 +1,7 @@
 --- # Configuration files
 - name: Copy clam scan file
   copy:
-    src: /etc/ansible/files/clamscan_daily.sh
+    src: files/clamscan_daily.sh
     dest: /root/scripts/clamscan_daily.sh
     mode: 0755
   tags: 
@@ -10,7 +10,7 @@
 
 - name: Copy scan file
   copy:
-    src: /etc/ansible/files/scan.conf
+    src: files/scan.conf
     dest: /etc/clamd.d/scan.conf
     mode: 0644
   tags: 
@@ -19,7 +19,7 @@
 
 - name: Copy muttrc file
   copy:
-    src: /etc/ansible/files/.muttrc
+    src: files/.muttrc
     dest: /root/.muttrc
     mode: 0755
   tags:
@@ -28,7 +28,7 @@
 
 - name: Copy freshclam file
   copy:
-    src: /etc/ansible/files/freshclam.conf
+    src: files/freshclam.conf
     dest: /etc/freshclam.conf
     mode: 0644
   tags: 
@@ -37,7 +37,7 @@
 
 - name: Copy clamd@scan file
   copy:
-    src: /etc/ansible/files/clamd@scan.service
+    src: files/clamd@scan.service
     dest: /usr/lib/systemd/system/clamd@scan.service
     mode: 644
   tags:
@@ -46,7 +46,7 @@
 
 - name: Copy freshclam service file
   copy:
-    src: /etc/ansible/files/clam-freshclam.service
+    src: files/clam-freshclam.service
     dest: /usr/lib/systemd/system/clam-freshclam.service
     mode: 0644
   tags:

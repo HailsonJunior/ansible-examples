@@ -1,2 +1,40 @@
 ---
 # handlers file for install-clamav
+- name: Stop clamd service
+  service:
+    name: clamd@scan
+    state: stopped
+  tags: 
+    - stop-clamd
+    - stop-services
+
+- name: Stop freshclam service
+  service:
+    name: clam-freshclam.service
+    state: stopped
+  tags:
+    - stop-freshclam.service
+    - stop-services
+
+- name: Stop selinux
+  shell: setenforce 0
+  tags: disable-selinux
+
+- name: Start and enable clamd service
+  service:
+    name: clamd@scan
+    state: started
+    enabled: yes
+  tags: 
+    - start-clamd-service
+    - start-services
+
+- name: Start freshclam service
+  service:
+    name: clam-freshclam.service
+    state: started
+  tags:
+    - start-freshclam-service
+    - start-services
+
+...

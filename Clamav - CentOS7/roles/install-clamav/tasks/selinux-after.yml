@@ -10,5 +10,15 @@
 - name: Configure selinux module
   shell: semodule -i clamd.pp
   tags: selinux
+  notify:
+  - Stop clamd service
+  - Stop freshclam service
+  - Stop selinux
+  - Start and enable clamd service
+  - Start freshclam service
+  
+- name: Execute freshclam
+  shell: freshclam
+  tags: exec-freshclam
 
 ...
