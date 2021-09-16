@@ -1,0 +1,77 @@
+--- # Configuration files
+- name: Copy clam scan file
+  copy:
+    src: /etc/ansible/files/clamscan_daily.sh
+    dest: /root/scripts/clamscan_daily.sh
+    mode: 0755
+  tags: 
+    - clamscan-file
+    - copy-files
+
+- name: Copy scan file
+  copy:
+    src: /etc/ansible/files/scan.conf
+    dest: /etc/clamd.d/scan.conf
+    mode: 0644
+  tags: 
+    - scan-file
+    - copy-files
+
+- name: Copy muttrc file
+  copy:
+    src: /etc/ansible/files/.muttrc
+    dest: /root/.muttrc
+    mode: 0755
+  tags:
+    - muttrc-file
+    - copy-files
+
+- name: Copy freshclam file
+  copy:
+    src: /etc/ansible/files/freshclam.conf
+    dest: /etc/freshclam.conf
+    mode: 0644
+  tags: 
+    - freshclam-file
+    - copy-files
+
+- name: Copy clamd@scan file
+  copy:
+    src: /etc/ansible/files/clamd@scan.service
+    dest: /usr/lib/systemd/system/clamd@scan.service
+    mode: 644
+  tags:
+    - clamd-service-file
+    - copy-files
+
+- name: Copy freshclam service file
+  copy:
+    src: /etc/ansible/files/clam-freshclam.service
+    dest: /usr/lib/systemd/system/clam-freshclam.service
+    mode: 0644
+  tags:
+    - freshclam-service-file
+    - copy-files
+    
+- name: Change muttrc remetente
+  replace:
+    path: /root/.muttrc
+    regexp: 'hostname'
+    replace: '"h-{{ ansible_hostname }}@environment.int"'
+  tags: change-muttrc-remetente
+
+- name: Ajuste remetente muttrc
+  replace:
+    path: /root/.muttrc
+    regexp: 'h-H'
+    replace: 'h'
+  tags: change-muttrc-remetente
+
+- name: Ajuste remetente muttrc
+  replace:
+    path: /root/.muttrc
+    regexp: 'h-h'
+    replace: 'h'
+  tags: change-muttrc-remetente
+
+...

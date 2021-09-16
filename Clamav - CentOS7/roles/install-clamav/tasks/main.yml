@@ -1,6 +1,7 @@
---- 
-# tasks file for instalacao-proxmox
+---
+# tasks file for install-clamav
 - include: install.yml
-- include: selinux.yml
-- include: conf-files.yml
+- include: selinux-before.yml
+- include: files.yml
 - include: services.yml
+- include: selinux-after.yml

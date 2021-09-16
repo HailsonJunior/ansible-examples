@@ -1,44 +1,39 @@
----
-- name: Instalação
-  hosts: 'host_group'
-  become: yes
-  become_method: sudo
-  tasks:
-    - name: Clean cache
-      shell: yum clean all
-      tags:
-        - clean-cache
-        - install-softwares
+--- # Instalação de pacotes
+- name: Clean cache
+  shell: yum clean all
+  tags:
+    - clean-cache
+    - install-softwares
 
-    - name: Instalação epel-release
-      yum:
-        name: epel-release
-        state: latest
-      tags: 
-        - install-epel
-        - install-softwares
+- name: Instalação epel-release
+  yum:
+    name: epel-release
+    state: latest
+  tags: 
+    - install-epel
+    - install-softwares
 
-    - name: Instalação Clamav
-      yum:
-        name:
-          - clamav-server
-          - clamav-data
-          - clamav-update
-          - clamav-filesystem
-          - clamav
-          - clamav-scanner-systemd
-          - clamav-devel
-          - clamav-lib
-          - clamav-server-systemd
-        state: latest
-      tags: 
-        - install-clamav
-        - install-softwares
+- name: Instalação Clamav
+  yum:
+    name:
+      - clamav-server
+      - clamav-data
+      - clamav-update
+      - clamav-filesystem
+      - clamav
+      - clamav-scanner-systemd
+      - clamav-devel
+      - clamav-lib
+      - clamav-server-systemd
+    state: latest
+  tags: 
+    - install-clamav
+    - install-softwares
 
-    - name: Clean cache
-      shell: yum clean all
-      tags: 
-        - clean-cache
-        - install-softwares  
+- name: Clean cache
+  shell: yum clean all
+  tags: 
+    - clean-cache
+    - install-softwares
 
 ...

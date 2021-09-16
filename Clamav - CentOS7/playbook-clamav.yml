@@ -1,0 +1,7 @@
+---
+- name: Instalação Clamav
+  hosts: 'group'
+  become: yes
+  become_method: sudo
+  roles:
+    - { role: install-clamav, tags: ["install-clamav"]}

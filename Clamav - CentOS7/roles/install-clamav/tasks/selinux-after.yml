@@ -1,0 +1,14 @@
+--- # Configure Selinux
+- name: Enable selinux
+  shell: setenforce 1
+  tags: enable-selinux
+
+- name: Configure selinux audit
+  shell: grep "clamd" /var/log/audit.log | audit2allow -M clamd
+  tags: selinux
+
+- name: Configure selinux module
+  shell: semodule -i clamd.pp
+  tags: selinux
+
+...

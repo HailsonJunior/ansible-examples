@@ -1,7 +1,0 @@
----
-- name: Install and configure Clamav on CentOS 7
-  hosts: 'host_group'
-  become: yes
-  become_method: sudo
-  roles:
-    - { role: install-clamav, tags: ["install-clamav"]}
