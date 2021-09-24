@@ -1,0 +1,17 @@
+---
+- name: Get zabbix-agent2 package
+  get_url:
+    url: https://repo.zabbix.com/zabbix/5.0/ubuntu/pool/main/z/zabbix/zabbix-agent2_5.0.9-1%2Bfocal_amd64.deb
+    dest: /tmp
+  tags: get-url
+
+- name: Install agent
+  apt:
+    deb: /tmp/zabbix-agent2_5.0.9-1%2Bfocal_amd64.deb
+  tags: install-agent
+
+- name: Remove deb file
+  file:
+    path: /tmp/zabbix-agent2_5.0.9-1%2Bfocal_amd64.deb
+    state: absent
+  tags: remove-file

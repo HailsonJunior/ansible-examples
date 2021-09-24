@@ -1,0 +1,4 @@
+---
+- include: install-agent.yml
+- include: configure-agent.yml
+- include: restart-agent.yml

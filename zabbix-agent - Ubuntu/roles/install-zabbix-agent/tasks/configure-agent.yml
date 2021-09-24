@@ -1,0 +1,20 @@
+- name: Modify line Server
+  lineinfile:
+    path: /etc/zabbix/zabbix_agent2.conf
+    regexp: '^Server='
+    line: Server=172.30.210.34
+  tags: modify-server
+
+- name: Modify line ServerActive
+  lineinfile:
+    path: /etc/zabbix/zabbix_agent2.conf
+    regexp: '^ServerActive='
+    line: ServerActive=172.30.210.34
+  tags: modify-server-active
+
+- name: Modify line Hostname
+  lineinfile:
+    path: /etc/zabbix/zabbix_agent2.conf
+    regexp: '^Hostname='
+    line: '#Hostname=Zabbix server'
+  tags: modify-hostname
